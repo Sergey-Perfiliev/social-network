@@ -1,0 +1,19 @@
+.nav {
+	grid-area: navbar;
+	background-color: green;
+}
+
+.list {
+	list-style: none;
+}
+
+
+.link {
+	text-decoration: none;
+	color: #fff;
+}
+
+.link.active {
+	text-decoration: none;
+	color: gold;
+}
