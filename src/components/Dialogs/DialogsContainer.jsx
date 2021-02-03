@@ -7,21 +7,21 @@ import { compose } from 'redux'
 
 
 let mapStateToProps = (state) => {
-    // data from state
-    return {
-        dialogsPage: state.dialogsPage
-    }
+	// data from state
+	return {
+		dialogsPage: state.dialogsPage
+	}
 }
 
 let mapDispatchToProps = (dispatch) => {
-    return {
-        sendMessage: (newMessageBody) => {
-            dispatch(sendMessageCreator(newMessageBody))
-        }
-    }
+	return {
+		sendMessage: (newMessageBody) => {
+			dispatch(sendMessageCreator(newMessageBody))
+		}
+	}
 }
 
 export default compose(
-    connect(mapStateToProps, mapDispatchToProps), 
-    WithAuthRedirect
+	connect(mapStateToProps, mapDispatchToProps),
+	WithAuthRedirect
 )(Dialogs)
