@@ -8,9 +8,7 @@ import { getUsers, getPageSize, totalUsersCount, getCurrentPage, getIsFetching, 
 
 
 class UsersContainer extends React.Component {
-    componentDidMount() {
-        console.log(this.props)
-        
+    componentDidMount() {   
         const {currentPage, pageSize} = this.props
         // thunk
         this.props.requestUsers(currentPage, pageSize)
@@ -36,17 +34,6 @@ class UsersContainer extends React.Component {
     }
 }
 
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.usersPage.users,
-//         pageSize: state.usersPage.pageSize,
-//         totalUsersCount: state.usersPage.totalUsersCount,
-//         Page: state.usersPage.Page,
-//         isFetching: state.usersPage.isFetching,
-//         followingInProgress: state.usersPage.followingInProgress
-//     }
-// }
-
 let mapStateToProps = (state) => {
     return {
         users: getUsers(state),
@@ -58,7 +45,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-// let withRedirect = WithAuthRedirect(UsersContainer)
 
 export default compose(
     //WithAuthRedirect,
