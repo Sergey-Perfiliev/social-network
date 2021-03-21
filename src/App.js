@@ -1,5 +1,5 @@
-import React, { Component, Suspense } from 'react'
-import { Route, withRouter } from 'react-router-dom'
+import React from 'react'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import UsersContainer from './components/Users/UsersContainer'
@@ -19,8 +19,17 @@ const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileCo
 
 
 class App extends React.Component {
+	catchAllUnhandledErrors = () => {
+		console.log("some error occurred");
+	}
+
 	componentDidMount() {
 		this.props.initializeApp()
+		window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+	}
+
+	componentWillUnmount() {
+		window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
 	}
 
 	render() {
@@ -31,18 +40,20 @@ class App extends React.Component {
 				<HeaderContainer />
 				<Navbar />
 				<div className='app-wrapper-content'>
-					<Route path="/profile/:userId?"
-						render={WithSuspense(ProfileContainer)} />
-					<Route path="/dialogs"
-						render={WithSuspense(DialogsContainer)} />
-					<Route path="/users"
-						render={() => <UsersContainer />} />
-					<Route path="/login"
-						render={() => <Login />} />
-
-					{/* <Route path="/news" />
-                    <Route path="/music" />
-                    <Route path="/settings" /> */}
+					<Switch>
+						<Route exact path="/"
+							render={() => <Redirect from="/" to="/profile" />} />
+						<Route path="/profile/:userId?"
+							render={WithSuspense(ProfileContainer)} />
+						<Route path="/dialogs"
+							render={WithSuspense(DialogsContainer)} />
+						<Route path="/users"
+							render={() => <UsersContainer />} />
+						<Route path="/login"
+							render={() => <Login />} />
+						<Route path="*"
+							render={() => <div>404</div>} />
+					</Switch>
 				</div>
 			</div>
 		)
@@ -59,7 +70,8 @@ const AppContainer = compose(
 )(App)
 
 let SocialNetworkApp = (props) => {
-	return <HashRouter>
+	// should remake to browserrouter; heroic
+	return <HashRouter> 
 		<Provider store={store}>
 			<AppContainer />
 		</Provider>

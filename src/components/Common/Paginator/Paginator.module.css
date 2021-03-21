@@ -1,14 +1,27 @@
 .paginator {
-	margin: 10px;
+	display: flex;
+	padding: 10px;
+	border: 1px solid #f0f0f0;
 }
 
 .pageNumber {
-	padding: 2px;
-	border: 1px solid grey;
+	padding: 0;
+	height: 100%;
 	cursor: pointer;
+	color: black;
+  padding: 6px 8px;
+  text-decoration: none;
 }
 
 .pageNumber.selectedPage {
-	font-weight: bold;
-	border-color: black;
+	background-color: #f0f0f0;
+}
+
+.paginator button {
+	color: black;
+  padding: 6px 8px;
+  background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: 1px solid #fff;
 }

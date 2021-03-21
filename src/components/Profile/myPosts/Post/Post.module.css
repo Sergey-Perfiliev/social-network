@@ -1,8 +1,29 @@
 .item {
-	color: lightblue;
+	padding: 10px;
+	border: 1px solid #f0f0f0;
+	margin-bottom: 15px;
 }
 
-.item img {
-	height: 100px;
-	border-radius: 10px;
+.PostPhoto {
+	border-radius: 100%;
+	width: 60px;
+	height: 60px;
+}
+
+.PostInfo {
+	display: flex;
+	align-items: center;
+}
+
+.PostInfoName {
+	padding-left: 10px;
+}
+
+.PostMessage {
+	padding: 7px;
+}
+
+.Likes {
+	padding: 7px;
+	border-top: 1px solid #f0f0f0;
 }

@@ -1,6 +1,7 @@
 .dialogs {
+	padding: 10px;
     display: grid;
-	grid-template-columns: 2fr 10fr;
+	grid-template-columns: 5fr 7fr;
 }
 
 .dialogsItems {
@@ -13,4 +14,20 @@
 
 .messages {
     padding: 10px;
+}
+
+.AddMessageForm {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.navlink {
+	text-decoration: none;
+	color: black;
+}
+
+.navlink:hover {
+	color: #dadce0;
+	cursor: pointer;
 }

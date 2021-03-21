@@ -1,10 +1,15 @@
+body {
+	background-color: #f0f0f0;
+	color: black;
+} 
+
 .app {
 	display: grid;
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1000px;
 	grid-template-areas:
-	"header header header"
-	"navbar profile profile";
+		"header header header"
+		"navbar profile profile";
 	grid-template-rows: 60px 1fr;
 	grid-template-columns: 2fr 10fr;
 	grid-gap: 10px;
@@ -12,9 +17,45 @@
 
 .app-wrapper-content {
 	grid-area: profile;
-	background-color: red;
+	background-color: #ffffff;
 }
 
 .app-wrapper-content img {
-	max-width: 900px;
+	max-width: 800px;
+}
+
+button {
+	margin: 0;
+	padding: 0;
+	width: 80px;
+	height: 25px;
+	font-weight: 400;
+	border: 1px solid #f0f0f0;
+	background-color: #ffffff;
+
+	outline: 0;
+	cursor: pointer;
+}
+
+form input[type="password"],
+form input[type="text"] 
+{
+	padding-left: 10px;
+	margin-bottom: 5px;
+	min-width: 225px;
+	height: 30px;
+	font-size: .9rem;
+	border: 1px solid #dadce0;
+	border-radius: 5px;
+
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0;
+	outline: none;
+}
+
+p {
+	margin: 0;
+	padding: 0;
 }

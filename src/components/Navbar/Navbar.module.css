@@ -1,19 +1,20 @@
 .nav {
 	grid-area: navbar;
-	background-color: green;
+	background-color: #ffffff;
 }
 
 .list {
 	list-style: none;
+	line-height: 1.5;
 }
-
 
 .link {
 	text-decoration: none;
-	color: #fff;
+	color: #000000;
+	font-size: 16px;
 }
 
 .link.active {
 	text-decoration: none;
-	color: gold;
+	color: #aca9a9;
 }

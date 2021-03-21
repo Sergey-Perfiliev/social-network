@@ -11,7 +11,7 @@ import s from "../Common/FormsControls/FormsControls.module.css"
 const LoginForm = ({handleSubmit, error, captchaUrl}) => {
 	return (
 		<form onSubmit={handleSubmit}>
-			{createField("Email", "email", [required], Input)}
+			{createField("Email", "email", [required], Input, {type: "text"})}
 			{createField("Password", "password", [required], Input, {type: "password"})}
 			{createField(null, "rememberMe", [], Input, {type: "checkbox"}, "rememberMe")}
 
@@ -38,7 +38,7 @@ const Login = (props) => {
 		return <Redirect to={"/profile"} />
 	}
 
-	return <div>
+	return <div className={s.loginForm}>
 		<h1>Login</h1>
 		<LoginReduxForm onSubmit={onSubmit} captchaUrl={props.captchaUrl} />
 	</div>

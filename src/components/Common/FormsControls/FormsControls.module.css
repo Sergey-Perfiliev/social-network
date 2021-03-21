@@ -1,13 +1,45 @@
 .formControl.error  input, .formControl.error textarea {
-    border: 2px solid black;
+	border: 2px solid black;
 }
 
 .formControl.error  span {
-    color: black;
+	color: black;
 }
 
 .formSummaryError {
-    border: 2px solid black;
-    color: black;
-    padding: 5px;
+	border: 2px solid black;
+	color: black;
+	padding: 5px;
+}
+
+.loginForm {
+	padding: 15px;
+}
+
+.loginForm h1 {
+	padding: 10px;
+	margin: 0;
+}
+
+.loginForm form input[type="password"],
+.loginForm form input[type="text"] 
+{
+	padding-left: 10px;
+	margin-bottom: 5px;
+	min-width: 225px;
+	height: 30px;
+	font-size: .9rem;
+	border: 1px solid #dadce0;
+	border-radius: 5px;
+
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-radius: 0;
+	outline: none;
+}
+
+.fieldWrapper {
+	display: flex;
+	padding: 5px;
 }

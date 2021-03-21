@@ -1,11 +1,92 @@
 .descriptionBlock {
-  padding: 10px;
+	display: flex;
 }
 
-.mainPhoto {
-	width: 150px;
+.descriptionAvatar {
+	margin-right: 30px;
+	display: inline-flex;
+	flex-direction: column;
+	width: 180px;
+}
+
+.descriptionAvatar input {
+	padding: 5px 0;
 }
 
 .contact {
 	padding-left: 20px;
+}
+
+.mainProfileInfo {
+	padding: 0 3px 10px 3px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.ProfileFullName {
+	line-height: .9;
+	padding: 0;
+	margin: 0;
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.ProfileData {
+	line-height: 2;
+	padding: 7px;
+}
+
+.ProfileDataRow {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	font-size: 14px;
+}
+
+.ProfileDataLabel {
+	float: left;
+	flex-basis: 30%;
+
+	font-weight: 400;
+	color: #828282;
+	
+}
+
+.ProfileDataDesc {
+	flex-basis: 70%;
+	margin: 0;
+	padding: 0;
+
+	color: #2a5885;
+	font-weight: 400;
+}
+
+.ProfileDataBtn {
+	display: block;
+	padding: 7px;
+	margin: 10px auto;
+	width: 80%;
+	height: 100%;
+	border: none;
+	border-radius: 5px;
+
+	transition: .2s;
+}
+
+.ProfileDataBtn:hover {
+	background-color: #f0f0f0;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.profileFileUpload {
+	margin-top: 5px;
+	font-size: 14px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	display: inline-block;
+	padding: 6px 12px;
+	cursor: pointer;
 }
